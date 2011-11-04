@@ -1,0 +1,73 @@
+\usetikzlibrary{decorations.fractals}
+\useoutertheme[subsection=false,shadow]{miniframes}
+\useinnertheme{default}
+\usefonttheme{serif}
+\usepackage{palatino}
+%\usepackage{utopia}
+
+
+
+
+\setbeamerfont{title like}{shape=\scshape}
+\setbeamerfont{frametitle}{shape=\scshape}
+
+
+
+\setbeamercolor*{lower separation line head}{bg=DeepSkyBlue4} 
+\setbeamercolor*{normal text}{fg=black,bg=white} 
+\setbeamercolor*{alerted text}{fg=red} 
+\setbeamercolor*{example text}{fg=black} 
+\setbeamercolor*{frametitle}{fg=DeepSkyBlue3} 
+\setbeamercolor*{structure}{fg=black} 
+ 
+\setbeamercolor*{palette tertiary}{fg=black,bg=black!10} 
+\setbeamercolor*{palette quaternary}{fg=black,bg=black!10} 
+
+\renewcommand{\(}{\begin{columns}}
+\renewcommand{\)}{\end{columns}}
+\newcommand{\<}[1]{\begin{column}{#1}}
+\renewcommand{\>}{\end{column}}
+
+% ======================================
+% custom commands 
+\newcommand{\cemph}[1]{\textcolor{\highlightcolor}{#1}}
+%\renewcommand\frametitle[1]{{\textsc{\Large \textcolor{\highlightcolor}{#1}}}\vspace{0.6cm}\par}
+
+\setbeamertemplate{frametitle}
+{
+{\textsc \insertframetitle}\vspace{0.6cm}\par
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\title{\slidesettitle} 
+\author{Nauman} 
+
+\begin{document}
+\begin{frame}
+\title{\slidesettitle}
+%\subtitle{SUBTITLE}
+\author{\footnotesize 
+	\textbf{\authorname}\\ \authoremail \\ {\scriptsize \url{\authorweb}} \\\vspace{12pt}
+	{\scriptsize \authoraffiliation}\\\vspace{6pt}
+	{\tiny \textcolor{gray}{\insertdate}}
+}
+\date{
+	{\scriptsize \today}
+}
+\begin{flushright}\includegraphics[width=0.15\textwidth]{\logoimagepath}\end{flushright}
+
+
+\begin{flushleft}
+\vspace{-1.5cm}{\small \textcolor{\highlightcolor}{\coursetitle}}\\\vspace{2cm}
+{\huge \slidesettitle} \\\vspace{20pt}
+\insertauthor 
+\end{flushleft}
+\end{frame}
+% custom footer after the title 
+\setbeamertemplate{navigation symbols}{\tiny \textcolor{gray}{\coursetitle\ [Slideset \slidesetnumber] -  }\textcolor{black}{\insertframenumber\ / \inserttotalframenumber}}
+
+
