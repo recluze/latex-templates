@@ -6,7 +6,7 @@
 %\usepackage{utopia}
 
 
-
+\usepackage{xifthen}% provides \isempty test
 
 \setbeamerfont{title like}{shape=\scshape}
 \setbeamerfont{frametitle}{shape=\scshape}
@@ -58,25 +58,36 @@
 
 \setbeamertemplate{footline}{
 \begin{tiny}
-\setbeamercolor{foot1}{fg=gray!70,bg=gray!10}
-\setbeamercolor{foot2}{fg=gray!70,bg=gray!10}
-\setbeamercolor{foot3}{fg=black,bg=gray!10}
+\setbeamercolor{foot1}{fg=black!70,bg=gray!10}
+\setbeamercolor{foot2}{fg=gray,bg=gray!15}
+\setbeamercolor{foot3}{fg=gray,bg=gray!10}
+\setbeamercolor{foot4}{fg=black!70,bg=gray!20}
+\setbeamercolor{foot5}{fg=gray,bg=gray!15}
+\setbeamercolor{foot6}{fg=black,bg=gray!20}
+
 % taken from theme infolines and adapted
   \leavevmode%
   \hbox{%
-  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1.5ex,center]{foot1}%
+  \begin{beamercolorbox}[wd=.35\paperwidth,ht=2.25ex,dp=1ex,center]{foot1}%
   \fontsize{5}{5}\selectfont
-   \insertshortauthor\ (\authorweb)
+  \slidesettitle
   \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1.5ex,center]{foot2}%
+  \begin{beamercolorbox}[wd=.1\paperwidth,ht=2.25ex,dp=1ex,center]{foot2}
+  \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.05\paperwidth,ht=2.25ex,dp=1ex,center]{foot3}
+  \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,center]{foot4}%
   \fontsize{5}{5}\selectfont
-  \slidesettitle 
+  \insertshortauthor\ (\authorweb) 
   \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1.5ex,right]{foot3}%
+  \begin{beamercolorbox}[wd=.05\paperwidth,ht=2.25ex,dp=1ex,center]{foot5}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.2\paperwidth,ht=2.25ex,dp=1ex,right]{foot6}%
 	\insertframenumber{} / \inserttotalframenumber \hspace*{2ex} 
   \end{beamercolorbox}}%
   \vskip0pt%
 \end{tiny}
+\vskip10pt
 }
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -104,7 +115,11 @@
 
 \begin{flushleft}
 \vspace{-1.5cm}{\small \textcolor{\highlightcolor}{\coursetitle}}\\\vspace{2cm}
-{\huge \slidesettitle} \\\vspace{20pt}
+{\huge \slidesettitle \ifthenelse{\equal{\slidesetsubtitle}{}}%
+    {}% if #1 is empty
+    {: \\ {\large \slidesetsubtitle}}% if #1 is not empty
+    } \\    
+    \vspace{20pt}
 \insertauthor 
 \end{flushleft}
 \end{frame}
