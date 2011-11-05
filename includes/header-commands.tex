@@ -40,13 +40,54 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{footline}{
+% taken from theme infolines and adapted
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{}%
+    \insertshortauthor
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{}%
+    \insertshortdate
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{}%
+	page \insertframenumber{} of \inserttotalframenumber \hspace*{2ex} 
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
 
+\setbeamertemplate{footline}{
+\begin{tiny}
+\setbeamercolor{foot1}{fg=gray!70,bg=gray!10}
+\setbeamercolor{foot2}{fg=gray!70,bg=gray!10}
+\setbeamercolor{foot3}{fg=black,bg=gray!10}
+% taken from theme infolines and adapted
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1.5ex,center]{foot1}%
+  \fontsize{5}{5}\selectfont
+   \insertshortauthor\ (\authorweb)
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1.5ex,center]{foot2}%
+  \fontsize{5}{5}\selectfont
+  \slidesettitle 
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1.5ex,right]{foot3}%
+	\insertframenumber{} / \inserttotalframenumber \hspace*{2ex} 
+  \end{beamercolorbox}}%
+  \vskip0pt%
+\end{tiny}
+}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Title slide 
 
 
 \title{\slidesettitle} 
 \author{Nauman} 
 
 \begin{document}
+{\setbeamertemplate{footline}{}
 \begin{frame}
 \title{\slidesettitle}
 %\subtitle{SUBTITLE}
@@ -67,7 +108,8 @@
 \insertauthor 
 \end{flushleft}
 \end{frame}
+}
 % custom footer after the title 
-\setbeamertemplate{navigation symbols}{\tiny \textcolor{gray}{\coursetitle\ [Slideset \slidesetnumber] -  }\textcolor{black}{\insertframenumber\ / \inserttotalframenumber}}
-
+%\setbeamertemplate{navigation symbols}{\tiny \textcolor{gray}{\coursetitle\ [Slideset \slidesetnumber] -  }\textcolor{black}{\insertframenumber\ / \inserttotalframenumber}}
+\setbeamertemplate{navigation symbols}{}
 

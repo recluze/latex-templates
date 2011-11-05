@@ -4,6 +4,8 @@
 \usepackage{textpos}
 \usepackage{color}
 \usepackage{hyperref}
+\useoutertheme{infolines}
+\institute{http://csrdu.org/nauman}
 % ========================================================
 % Customizations 
 \newcommand{\logoimagepath}{../../logos/fastlogo}
@@ -16,13 +18,15 @@
 \newcommand{\coursetitle}{Seminar Series on Introduction to Research}
 \newcommand{\slidesettitle}{Document Preparation Using \LaTeX2$_\epsilon$}
 \newcommand{\slidesetnumber}{01}
+\usefonttheme{professionalfonts}
 % ========================================================
 % DO NOT MODIFY THE NEXT LINE ----------
 \input{../../includes/header-commands}
+
 % ================= BEGIN SLIDES ============================================
 
 \begin{frame}[allowframebreaks,t] % %----------------------------------------------------------
-\frametitle{Optional Title for My Slide}
+\frametitle{Session Series Plan}
 
 \begin{itemize} 
 \item Introduction to \LaTeX 
@@ -54,7 +58,7 @@
 \begin{itemize} 
   \item Based on \TeX
   \item Pronounced leh-tek (k being the sound of $\chi$)
- 	\item Takes in LaTeX source and generates a number of outputs (dvi, html, rtf, pdf, ps …)
+ 	\item Takes in \LaTeX\ source and generates a number of outputs (dvi, html, rtf, pdf, ps …)
 	\item The output is concerned with placing “boxes” around the “page” 
 \item Boxes are combined to form other boxes 
 \item Placed using fixed or ‘elastic’ widths and distances
@@ -110,25 +114,37 @@
 \begin{itemize} 
   \item To work with LaTeX, you need: 
   \begin{itemize}
- 	 \item an editor (TeXnicCenter, Kile, WinEdt, LED) 
-  	 \item a compiler (MikTeX, TeXLive, tetex …)   
+ 	 \item an editor ({\TeX}nicCenter, Kile, WinEdt, LED) 
+  	 \item a compiler (Mik{\TeX}, {\TeX}Live, tetex ...)   
   \end{itemize}
-  \item Enough talk. Let’s get started! 
-	
+  \item Enough talk. Let’s get started!
 \end{itemize}
 \end{frame}
 %----------------------------------------------------------
 \begin{frame}[t] % 
 \frametitle{Demo}
 \begin{itemize} 
-  \item Installing software 
-  \item Creating your first document 
-  \item Getting the required packages 
-\item Creating your second document (an ACM format paper) 
-\item Creating your third document (a Springer format paper) 
-\item Algorithms 
-\item Cool output boxes with line numbers! 
+  \item Installing software \pause
+  \item Creating your first document \pause 
+  \item Getting the required packages \pause 
+  \item Creating your second document (an ACM format paper) \pause 
+  \item Creating your third document (a Springer format paper) \pause
+  \item Creating your fourth document (an IEEE transactions format paper) \pause   
+  \item Algorithms \pause
+  \item Mathematical typesetting \pause 
+  \item Cool output boxes with line numbers!
  
+\end{itemize}
+\end{frame}
+%----------------------------------------------------------
+\begin{frame}[t] % 
+\frametitle{Getting the Sources}
+\begin{itemize} 
+  \item You can get the resources for these sessions here:
+  \url{http://www.csrdu.org/nauman/2011/10/16/latex-screencasts/} 
+  \item Feel free to leave comments on the post there if you have any questions at all. I'll try to answer them as soon as possible. 
+  \item All the required files (and completed documents) can be downloaded from this page. 
+  \item You can find a really good resource on learning \LaTeX\ here: \url{http://ctan.org/tex-archive/info/lshort/english/lshort.pdf}
 \end{itemize}
 \end{frame}
 
