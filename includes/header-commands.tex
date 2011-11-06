@@ -2,7 +2,8 @@
 \useoutertheme[subsection=false,shadow]{miniframes}
 \useinnertheme{default}
 \usefonttheme{serif}
-\usepackage{palatino}
+%\usepackage{palatino}
+\usepackage{mathpazo}
 %\usepackage{utopia}
 
 
@@ -23,10 +24,10 @@
 \setbeamercolor*{palette tertiary}{fg=black,bg=black!10} 
 \setbeamercolor*{palette quaternary}{fg=black,bg=black!10} 
 
-\renewcommand{\(}{\begin{columns}}
-\renewcommand{\)}{\end{columns}}
-\newcommand{\<}[1]{\begin{column}{#1}}
-\renewcommand{\>}{\end{column}}
+%\renewcommand{\(}{\begin{columns}}
+%\renewcommand{\)}{\end{columns}}
+%\newcommand{\<}[1]{\begin{column}{#1}}
+%\renewcommand{\>}{\end{column}}
 
 % ======================================
 % custom commands 
@@ -35,27 +36,20 @@
 
 \setbeamertemplate{frametitle}
 {
-{\textsc \insertframetitle}\vspace{0.6cm}\par
+{\textsc \insertframetitle}\vspace{0.2cm}\par
 }
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\setbeamertemplate{footline}{
-% taken from theme infolines and adapted
-  \leavevmode%
-  \hbox{%
-  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{}%
-    \insertshortauthor
+\setbeamertemplate{headline}{% 
+	\setbeamercolor{head1}{bg=\headbarcolor}
+	 \hbox{%
+  \begin{beamercolorbox}[wd=.01\paperwidth,ht=2.25ex,dp=50ex,center]{head1}%
+  \fontsize{5}{5}\selectfont
+  
   \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{}%
-    \insertshortdate
-  \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{}%
-	page \insertframenumber{} of \inserttotalframenumber \hspace*{2ex} 
-  \end{beamercolorbox}}%
-  \vskip0pt%
+  }\vspace{-50ex}
 }
-
 \setbeamertemplate{footline}{
 \begin{tiny}
 \setbeamercolor{foot1}{fg=black!70,bg=gray!10}
@@ -128,3 +122,17 @@
 %\setbeamertemplate{navigation symbols}{\tiny \textcolor{gray}{\coursetitle\ [Slideset \slidesetnumber] -  }\textcolor{black}{\insertframenumber\ / \inserttotalframenumber}}
 \setbeamertemplate{navigation symbols}{}
 
+
+%% ----------- redefine headline for next slides
+\setbeamertemplate{headline}{% 
+	\setbeamercolor{head1}{bg=\headbarcolor}
+	 \hbox{%
+  \begin{beamercolorbox}[wd=.01\paperwidth,ht=2.25ex,dp=10ex,center]{head1}%
+  \fontsize{5}{5}\selectfont
+  
+  \end{beamercolorbox}%
+  }\vspace{-10ex}
+}
+
+% greater line spacing for new slides
+\linespread{1.2} 

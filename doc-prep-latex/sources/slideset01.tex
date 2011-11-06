@@ -2,6 +2,7 @@
 \usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{textpos}
+\usepackage{arabtex}
 \usepackage{color}
 \usepackage{hyperref}
 \useoutertheme{infolines}
@@ -10,6 +11,7 @@
 % Customizations 
 \newcommand{\logoimagepath}{../../logos/fastlogo}
 \newcommand{\highlightcolor}{DeepSkyBlue3}
+\newcommand{\headbarcolor}{DeepSkyBlue4!25}
 \newcommand{\authorname}{Nauman}
 \newcommand{\authoremail}{recluze@gmail.com}
 \newcommand{\authorweb}{http://csrdu.org/nauman}
@@ -58,7 +60,7 @@
 \frametitle{Introduction to \LaTeX}
 \begin{itemize} 
   \item Based on \TeX
-  \item Pronounced leh-tek (k being the sound of $\chi$)
+  \item Pronounced leh-tek (k being the sound of Arabic \RL{_h} or Greek $\chi$)
  	\item Takes in \LaTeX\ source and generates a number of outputs (dvi, html, rtf, pdf, ps …)
 	\item The output is concerned with placing “boxes” around the “page” 
 \item Boxes are combined to form other boxes 
@@ -98,10 +100,9 @@ Output:
 \end{center}
 \pause
 
-Code: 
-
-\texttt{What is the second question I should ask you?}
-$\backslash$\texttt{putansline\{6\}\{3\}}
+Input: \\
+\hspace{1cm}\texttt{What is the second question I should ask you?}\\
+\hspace{1cm}$\backslash$\texttt{putansline\{6\}\{3\}}
 
 \end{frame}
 
