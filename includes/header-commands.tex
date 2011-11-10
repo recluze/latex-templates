@@ -5,6 +5,13 @@
 %\usepackage{palatino}
 \usepackage{mathpazo}
 %\usepackage{utopia}
+\usepackage{stmaryrd} % for varodot, bigodot 
+\usepackage{mathabx} % for \coAsterisk
+%\usepackage{mnsymbol}
+\setbeamertemplate{itemize item}{\scriptsize\raise1.7pt\hbox{\donotcoloroutermaths$\Asterisk$}}
+\setbeamertemplate{itemize item}{\scriptsize\raise1.7pt\hbox{\donotcoloroutermaths$\varodot$}}
+\setbeamertemplate{itemize subitem}{\scriptsize\raise1.25pt\hbox{\donotcoloroutermaths$\rhd$}}
+
 
 
 \usepackage{xifthen}% provides \isempty test
