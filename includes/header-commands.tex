@@ -16,8 +16,8 @@
 
 \usepackage{xifthen}% provides \isempty test
 
-\setbeamerfont{title like}{shape=\scshape}
-\setbeamerfont{frametitle}{shape=\scshape}
+%\setbeamerfont{title like}{shape=\scshape}
+\setbeamerfont{frametitle}{shape=\upshape}
 
 
 
@@ -25,7 +25,7 @@
 \setbeamercolor*{normal text}{fg=black,bg=white} 
 \setbeamercolor*{alerted text}{fg=red} 
 \setbeamercolor*{example text}{fg=black} 
-\setbeamercolor*{frametitle}{fg=DeepSkyBlue3} 
+\setbeamercolor*{frametitle}{fg=\highlightcolor} 
 \setbeamercolor*{structure}{fg=black} 
  
 \setbeamercolor*{palette tertiary}{fg=black,bg=black!10} 
@@ -94,7 +94,6 @@
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 % Title slide 
 
-
 \title{\slidesettitle} 
 \author{Nauman} 
 
@@ -104,9 +103,9 @@
 \title{\slidesettitle}
 %\subtitle{SUBTITLE}
 \author{\footnotesize 
-	\textbf{\authorname}\\ \authoremail \\ {\scriptsize \url{\authorweb}} \\\vspace{12pt}
+	\textbf{\authorname}\\ \authoremail \\ \url{\authorweb} \\\vspace{12pt}
 	{\scriptsize \authoraffiliation}\\\vspace{6pt}
-	{\tiny \textcolor{gray}{\insertdate}}
+	{\tiny \textcolor{gray}{\slidesetdate}}
 }
 \date{
 	{\scriptsize \today}

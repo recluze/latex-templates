@@ -1,0 +1,34 @@
+
+Name: new-frame
+Trigger: (?<=\s|^)%
+
+\begin{frame}[%<allowframebreaks,%>%<fragile,%>t] 
+%-------------------------------
+\frametitle{%<title%>}
+\begin{itemize}
+\item %<content%>
+\end{itemize}
+
+\end{frame}
+
+
+
+Name: new-frame-img 
+Trigger: (?<=\S)% 
+
+\begin{frame}[%<allowframebreaks,%>%<fragile,%>t] 
+%-------------------------------
+\frametitle{%<title%>}
+\begin{itemize}
+\item %<content%>
+\end{itemize}
+
+\end{frame}
+
+
+Name: surround-itemize 
+Trigger: (?<=\S)% 
+
+%itemize
+
+
