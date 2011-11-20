@@ -1,6 +1,7 @@
+\usepackage{tikz}
 \usetikzlibrary{decorations.fractals}
-\useoutertheme[subsection=false,shadow]{miniframes}
-\useinnertheme{default}
+%\useoutertheme[subsection=false,shadow]{miniframes}
+%\useinnertheme{default}
 \usefonttheme{serif}
 %\usepackage{palatino}
 \usepackage{mathpazo}
@@ -8,19 +9,19 @@
 \usepackage{stmaryrd} % for varodot, bigodot 
 \usepackage{mathabx} % for \coAsterisk
 %\usepackage{mnsymbol}
+\usepackage{xifthen}% provides \isempty test
+
+
+%Beamer options ------------------------
+\setbeamersize{text margin left=12pt}
+\setbeamersize{text margin right=12pt}
+
 \setbeamertemplate{itemize item}{\scriptsize\raise1.7pt\hbox{\donotcoloroutermaths$\Asterisk$}}
 \setbeamertemplate{itemize item}{\scriptsize\raise1.7pt\hbox{\donotcoloroutermaths$\varodot$}}
 \setbeamertemplate{itemize subitem}{\scriptsize\raise1.25pt\hbox{\donotcoloroutermaths$\rhd$}}
 
-
-
-\usepackage{xifthen}% provides \isempty test
-
 %\setbeamerfont{title like}{shape=\scshape}
 \setbeamerfont{frametitle}{shape=\upshape}
-
-
-
 \setbeamercolor*{lower separation line head}{bg=DeepSkyBlue4} 
 \setbeamercolor*{normal text}{fg=black,bg=white} 
 \setbeamercolor*{alerted text}{fg=red} 
@@ -30,6 +31,14 @@
  
 \setbeamercolor*{palette tertiary}{fg=black,bg=black!10} 
 \setbeamercolor*{palette quaternary}{fg=black,bg=black!10} 
+
+%Minted options ----------------
+\newminted[mintjava2]{java}{xleftmargin=20pt,numbersep=10pt,fontsize=\scriptsize,linenos}%
+\newminted[mintjava1]{java}{xleftmargin=20pt,numbersep=10pt,fontsize=\tiny,linenos}%
+
+\newminted[mintxml2]{xml}{xleftmargin=20pt,numbersep=10pt,fontsize=\scriptsize,linenos}%
+\newminted[mintxml2sp]{xml}{samepage,xleftmargin=20pt,numbersep=10pt,fontsize=\scriptsize,linenos}%
+\newminted[mintxml1]{xml}{xleftmargin=20pt,numbersep=10pt,fontsize=\tiny,linenos}%
 
 %\renewcommand{\(}{\begin{columns}}
 %\renewcommand{\)}{\end{columns}}
