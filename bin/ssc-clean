@@ -8,5 +8,14 @@ fi
 
  
 
-rm $1.snm $1.nav $1.aux $1.bbl $1.toc $1.out $1*.gz $1.log
+rm $1.snm $1.nav $1.aux $1.bbl $1.toc $1.out $1*.gz $1.log $1.bbl $1.vrb $1.blg $1.pyg 
+rm *.log 
+rm *.vrb 
+rm *.bbl 
+rm *.aux 
+rm *.toc 
+rm *.out 
+rm *.blg
+rm *.pyg 
+
 mv $1.pdf ../
