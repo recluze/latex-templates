@@ -4,16 +4,30 @@
 \usepackage{graphicx}
 \usepackage{wrapfig}
 \usepackage{xcolor}
-\usepackage{mathpazo}
+%\usepackage{mathpazo}
 \usepackage{lastpage}
 \usepackage{totcount}
 	
+\usepackage[charter]{mathdesign}
+  
 \usepackage[hmargin=2cm,vmargin=2.5cm]{geometry}
 
 \newtotcounter{calctotalmarks}
 \setcounter{calctotalmarks}{0} 
 \newcounter{forloopcounter} 
 \newcommand{\putansline}[2]{\setcounter{forloopcounter}{1}\forloop{forloopcounter}{0}{\value{forloopcounter}< #1}{\par\vspace{\the\baselineskip}\dotfill}[#2]\addtocounter{calctotalmarks}{#2}}
+
+\newcommand{\putbonusansline}[2]{\setcounter{forloopcounter}{1}\forloop{forloopcounter}{0}{\value{forloopcounter}< #1}{\par\vspace{\the\baselineskip}\dotfill}[#2]}
+
+
+
+\newcommand{\hideanslines}{%
+  \renewcommand{\putansline}[2]{\hfill [##2]\addtocounter{calctotalmarks}{##2}}
+  \renewcommand{\putansbox}[1]{}
+  \renewcommand{\putbonusansline}[2]{\hfill  [##2]}
+%  \renewcommand{\newpage}{}
+}%
+
 \newcommand{\calculatedtotalmarks}{\vspace{20pt}\par Calculated Total Marks: \the\value{calctotalmarks}}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
@@ -61,7 +75,7 @@
     \topnote\vspace{18pt}
 %    \hrule 
   } & 
-   Score: \parbox[c]{0.25\textwidth}{\vspace{0.5cm}\hspace{0.21\textwidth} /  \total{calctotalmarks}\vspace{0.5cm} \tiny{\textcolor{gray}{To be filled in by the instructor.}}}
+   Score: \parbox[c]{0.25\textwidth}{\vspace{0.5cm}\hspace{0.2\textwidth} /  \total{calctotalmarks}\vspace{0.5cm}\\ \tiny{\textcolor{gray}{To be filled in by the instructor.}}}
    \\\hline 
 \end{tabular} 
 

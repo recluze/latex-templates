@@ -1,0 +1,26 @@
+%course outline comamands BEGIN
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{etoolbox}
+\newcounter{a}
+\newcounter{b}
+\newbool{firstline}
+\newenvironment{mytabular}{%
+  \setcounter{a}{0}%
+  \setcounter{b}{0}%
+  \booltrue{firstline}%
+  \begin{longtable}{ll}
+    \toprule \textbf{Week} & \textbf{Topics} \\\toprule}
+    {\\\bottomrule\end{longtable}}
+    \newcommand{\mitem}[2][]{%
+      \addtocounter{b}{1}%
+      \ifbool{firstline}{}{\ifblank{#1}{\\}{\\\midrule}}%
+      \global\boolfalse{firstline}%
+      #1 \ifblank{#1}{}{\setcounter{b}{1}\addtocounter{a}{1}\thea}%
+      %    &\theb. #2 %
+      & #2% 
+    }
+    \newcommand{\nitem}[1]{%
+      \\\midrule & \textbf{#1}}
+      \newcommand{\witem}[1]{\mitem[Week]{#1}}
+      %course outline comamands end       
