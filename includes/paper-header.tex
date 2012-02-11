@@ -1,3 +1,10 @@
+\AtEndDocument{\refstepcounter{cnt}\label{lastcnt}}
+\AtBeginDocument{\ifnum\getrefnumber{lastcnt}=0 
+  \def\finalnumber{2}%
+  \else
+  \edef\finalnumber{\number\numexpr\getrefnumber{lastcnt}-1\relax}%
+  \fi}
+  
 \usepackage{calc} 
 \usepackage{forloop}
 \usepackage{framed}
@@ -7,17 +14,80 @@
 %\usepackage{mathpazo}
 \usepackage{lastpage}
 \usepackage{totcount}
-	
 \usepackage[charter]{mathdesign}
-  
 \usepackage[hmargin=2cm,vmargin=2.5cm]{geometry}
 
+
+% COMMANDS FOR DISPLAYING AND COLLECTING SCORES :::::::::::
 \newtotcounter{calctotalmarks}
 \setcounter{calctotalmarks}{0} 
 \newcounter{forloopcounter} 
-\newcommand{\putansline}[2]{\setcounter{forloopcounter}{1}\forloop{forloopcounter}{0}{\value{forloopcounter}< #1}{\par\vspace{\the\baselineskip}\dotfill}[#2]\addtocounter{calctotalmarks}{#2}}
 
-\newcommand{\putbonusansline}[2]{\setcounter{forloopcounter}{1}\forloop{forloopcounter}{0}{\value{forloopcounter}< #1}{\par\vspace{\the\baselineskip}\dotfill}[#2]}
+% GRADING TABLE COMMANDS::::::::::::::::::::::::::: 
+\usepackage{etoolbox}
+\usepackage{refcount}
+
+\newcommand{\scalegradingtablevar}{1}
+\newcommand{\scalegradingtable}[1]{%  
+  \renewcommand{\scalegradingtablevar}{#1}%
+}
+
+\newcounter{cnt}
+\newcounter{finalnump}
+
+\makeatletter
+\newcommand\addtext[1]{%
+  \stepcounter{cnt}%
+  \def\@currentlabel{#1}%
+  \label{text\thecnt}}
+\makeatother
+  
+\newcommand\gettext[1]{\getrefnumber{text#1}}
+  
+\newcounter{colnum}      
+% For grading table output
+
+
+\newcommand{\makegradingtable}{%
+  \setcounter{finalnump}{\finalnumber}%
+  \addtocounter{finalnump}{2}%
+  \resizebox{\scalegradingtablevar\textwidth}{!}{%
+      \begin{tabular}{ |l||c@{}*{\finalnumber}{p{0.25cm}|} |c|c| }% the first row is hidden
+        \hline
+        \setcounter{colnum}{0}%
+        Q. No.: & 
+        \whileboolexpr
+        { test {\ifnumcomp{\value{colnum}}{<}{\finalnumber}} }%
+        {&\stepcounter{colnum}\thecolnum} & Sum & Sign\\
+        \hline
+        Scored:&         
+        \setcounter{colnum}{0}
+        \whileboolexpr
+        { test {\ifnumcomp{\value{colnum}}{<}{\finalnumber}} }%
+        {&\stepcounter{colnum}} & & \\
+        \cline{1-\value{finalnump}}
+        Total: & 
+        \setcounter{colnum}{0}
+        \whileboolexpr
+        { test {\ifnumcomp{\value{colnum}}{<}{\finalnumber}} }%
+        {&\stepcounter{colnum}\gettext{\thecolnum}} & & \\
+        \hline        
+      \end{tabular}%
+  }%
+}
+    
+        
+\newcommand{\putansline}[2]{%
+  \setcounter{forloopcounter}{1}\forloop{forloopcounter}{0}{\value{forloopcounter}< #1}{\par\vspace{\the\baselineskip}\dotfill}%
+  \hfill[#2]%
+  \addtocounter{calctotalmarks}{#2}% ADD to total 
+  \addtext{#2}% ADD to question marks for grading table
+  }
+
+\newcommand{\putbonusansline}[2]{%
+  \setcounter{forloopcounter}{1}\forloop{forloopcounter}{0}{\value{forloopcounter}< #1}{\par\vspace{\the\baselineskip}\dotfill}[#2]%
+  \addtext{#2}
+  }
 
 
 
@@ -40,6 +110,7 @@
   \vspace{\the\baselineskip}\par\framebox[0.94\textwidth]{\rule{0pt}{#1\baselineskip}}\vspace{\the\baselineskip}
 }
 
+% PAPER HEADER COMMANDS ::::::::::::::::::::::::::::::::
 \newcommand{\maketitleheader}{%
 \begin{tabular}{ccc}
 \begin{minipage}{0.15\textwidth}
@@ -65,29 +136,25 @@
 							  \total{calctotalmarks}  & \textbf{Weight}: \weightmarks \\
 \textbf{Time allowed}:& \timeallowed & \textbf{Date}:        & \examdate \\
 \textbf{Course}:      & \coursename  & \textbf{Instructor}:  & \instructorname  \\
-\end{tabular}
+\end{tabular}\vspace{12pt}
+\par 
+\makegradingtable  
 \end{center}
-\hfill 
-\begin{tabular}{|l|c|}
-  \hline 
-  \parbox[c]{0.615\textwidth}{\vspace{18pt}
-%    \hrule\vspace{6pt}
-    \topnote\vspace{18pt}
-%    \hrule 
-  } & 
-   Score: \parbox[c]{0.25\textwidth}{\vspace{0.5cm}\hspace{0.2\textwidth} /  \total{calctotalmarks}\vspace{0.5cm}\\ \tiny{\textcolor{gray}{To be filled in by the instructor.}}}
-   \\\hline 
-\end{tabular} 
+\hfill
 
-
-
+\makeinstructionsbox
 }
 
-%\newcommand{\putansbox}[1]{%
-%  \vspace{\the\baselineskip}\par\framebox[\dimexpr\linewidth-2\fboxrule-2\fboxsep\relax]  
-%  {%
-%    \rule{0pt}{#1\baselineskip}%
-%  }%
-%  \vspace{\the\baselineskip}
-%}
+
+\newcommand{\makeinstructionsbox}{%
+  \begin{center}
+  \parbox{0.95\textwidth}{%
+   \hrule
+   \vspace{12pt}
+   \noindent\topnote\vspace{12pt}
+   \hrule 
+  }%
+  \end{center}%
+}
+  
 

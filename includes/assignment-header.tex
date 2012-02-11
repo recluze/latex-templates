@@ -73,3 +73,26 @@
 \end{center}
 }
 
+
+
+% Teletype small text 
+\newcommand{\tts}[1]{%
+  {\footnotesize{\texttt{#1}}}%
+}
+
+% Teletype small text for code (bg set)
+\newcommand{\code}[1]{%
+  %  \colorbox{\codeboxbg}{\tts{#1}}%
+  \tts{#1}%
+}
+
+
+% Minted styles for java, text 
+\newminted[mintjava]{java}{xleftmargin=0pt,numbersep=5pt,fontsize=\footnotesize,linenos}%
+
+\newminted[minttext]{text}{xleftmargin=0pt,numbersep=5pt,fontsize=\footnotesize,linenos}%
+
+\newminted[mintbash]{bash}{xleftmargin=0pt,numbersep=5pt,fontsize=\footnotesize,linenos}%
+
+\newminted[mintasm]{nasm}{xleftmargin=0pt,numbersep=5pt,fontsize=\footnotesize,linenos}%
+
