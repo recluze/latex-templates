@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="147.55193" height="98.704102" id="svg6011" version="1.1" inkscape:version="0.48.0 r9654" sodipodi:docname="nuage.svg">
+  <title id="title6047">nuage</title>
+  <defs id="defs6013"/>
+  <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="0.98994949" inkscape:cx="272.83947" inkscape:cy="56.690216" inkscape:document-units="px" inkscape:current-layer="layer1" showgrid="false" inkscape:window-width="1018" inkscape:window-height="665" inkscape:window-x="447" inkscape:window-y="107" inkscape:window-maximized="0" fit-margin-top="0" fit-margin-left="0" fit-margin-right="0" fit-margin-bottom="0"/>
+  <metadata id="metadata6016">
+    <rdf:RDF>
+      <cc:Work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <dc:title>nuage</dc:title>
+        <cc:license rdf:resource="http://creativecommons.org/licenses/publicdomain/"/>
+        <dc:date>2011-02-06</dc:date>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>lmproulx</dc:title>
+          </cc:Agent>
+        </dc:creator>
+      </cc:Work>
+      <cc:License rdf:about="http://creativecommons.org/licenses/publicdomain/">
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+        <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <g inkscape:label="Calque 1" inkscape:groupmode="layer" id="layer1" transform="translate(-167.05466,-379.59924)">
+    <path inkscape:connector-curvature="0" id="path5997" d="m 262.23757,388.70673 c -13.13226,0 -24.36476,8.75504 -28.93874,21.15325 -3.28364,-1.44879 -6.92847,-2.22341 -10.75425,-2.22341 -12.89656,0 -23.63069,9.13525 -25.97782,21.24589 -1.65257,-0.41046 -3.38524,-0.61761 -5.16763,-0.61761 -11.60557,0 -21.00571,9.25452 -21.00571,20.65917 0,11.40463 9.40014,20.65915 21.00571,20.65915 3.64942,0 7.09323,-0.92418 10.08387,-2.53221 5.16209,5.17569 13.54997,8.55395 23.01689,8.55395 7.62527,0 14.53429,-2.1895 19.637,-5.74381 4.38513,4.59567 10.52222,7.44224 17.31853,7.44224 8.83023,0 16.54937,-4.81872 20.75434,-12.01257 2.8951,1.62824 6.16573,2.56308 9.609,2.56308 12.0354,0 21.78783,-11.17098 21.78783,-24.95156 0,-13.27227 -9.05524,-24.10728 -20.475,-24.88982 -1.93417,-16.53022 -15.03339,-29.30574 -30.89402,-29.30574 z" style="fill:#cccccc;fill-opacity:1;stroke:#cccccc;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"/>
+    <path style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" d="m 259.89881,380.59924 c -13.13226,0 -24.36476,8.75504 -28.93874,21.15325 -3.28364,-1.44879 -6.92847,-2.22341 -10.75425,-2.22341 -12.89656,0 -23.63069,9.13525 -25.97782,21.24589 -1.65257,-0.41046 -3.38524,-0.61761 -5.16763,-0.61761 -11.60557,0 -21.00571,9.25452 -21.00571,20.65917 0,11.40463 9.40014,20.65915 21.00571,20.65915 3.64942,0 7.09323,-0.92418 10.08387,-2.53221 5.16209,5.17569 13.54997,8.55395 23.01689,8.55395 7.62527,0 14.53429,-2.1895 19.637,-5.74381 4.38513,4.59567 10.52222,7.44224 17.31853,7.44224 8.83023,0 16.54937,-4.81872 20.75434,-12.01257 2.8951,1.62824 6.16573,2.56308 9.60899,2.56308 12.03541,0 21.78784,-11.17098 21.78784,-24.95156 0,-13.27227 -9.05524,-24.10728 -20.475,-24.88982 -1.93417,-16.53022 -15.03339,-29.30574 -30.89402,-29.30574 z" id="path4074" inkscape:connector-curvature="0"/>
+  </g>
+</svg>
