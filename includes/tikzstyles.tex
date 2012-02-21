@@ -19,5 +19,14 @@
     dummyheight/.style={
         punkt,fill=none,
         draw=black, dashed, thin
-    }
+    },
+    dropshadowfade/.style={drop shadow={shadow xshift=0.1em,
+         shadow yshift=-0.1em, opacity=0.5
+      }, 
+      preaction={drop shadow ={shadow xshift=0.15em, shadow  
+        yshift=-0.15em, opacity=.3} , 
+      	preaction={ 
+      	  drop shadow={opacity=.1, 
+      	    shadow xshift=0.2em, shadow yshift=-0.2em}}}, 
+  },
 }
