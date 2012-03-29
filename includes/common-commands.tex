@@ -1,1 +1,60 @@
 \newcommand{\putimg}[2]{\includegraphics[width=#1\textwidth]{\tikzstylepath/imgs/#2}}
+
+
+
+
+%Minted options ----------------
+\newminted[mintjava2]{java}{xleftmargin=20pt,numbersep=10pt,fontsize=\scriptsize,linenos}%
+\newminted[mintjava1]{java}{xleftmargin=20pt,numbersep=10pt,fontsize=\tiny,linenos}%
+
+\newminted[mintcpp2]{cpp}{xleftmargin=20pt,numbersep=10pt,fontsize=\scriptsize,linenos}%
+
+\newminted[mintasm]{nasm}{xleftmargin=20pt,numbersep=10pt,fontsize=\tiny,linenos}%
+
+\newminted[mintxml2]{xml}{xleftmargin=20pt,numbersep=10pt,fontsize=\scriptsize,linenos}%
+\newminted[mintxml2sp]{xml}{samepage,xleftmargin=20pt,numbersep=10pt,fontsize=\scriptsize,linenos}%
+\newminted[mintxml1]{xml}{xleftmargin=20pt,numbersep=10pt,fontsize=\tiny,linenos}%
+
+
+
+
+
+
+
+
+% tikz commands for deadlock drawings 
+\newcommand{\drawressingle}[4]{%
+  \ifx&#3&\tikzstyle{placeres}=[];%
+  \else\tikzstyle{placeres}=[#3];\fi%
+  \ifx&#3&\tikzstyle{resstyle}=[];%
+  \else\tikzstyle{resstyle}=[usedres];\fi%
+%
+  \node [placeres] (#1l) {#2};
+  \node [resi,below=0.15em of #1l] (#1i1) {};
+  \coordinate (boxnode) at (#1l.north);
+  \node (boxnode) [minimum width=1.5em,inner sep=0pt,outer sep=0pt,fit=(boxnode)(#1i1)] {};
+  \node [fit=(boxnode), inner sep=0.3em] (boxnodeouter) {};%
+ \begin{pgfonlayer}{background}
+   \draw [res,resstyle] (boxnodeouter.south west) rectangle node [fit=(boxnode), inner sep=5pt] (#1) {} (boxnodeouter.north east);
+   \end{pgfonlayer} 
+}
+\newcommand{\drawres}[5]{%
+  \ifx&#4&\tikzstyle{placeres}=[];%
+  \else\tikzstyle{placeres}=[#4];\fi%
+  \ifx&#5&\tikzstyle{resstyle}=[];%
+  \else\tikzstyle{resstyle}=[usedres];\fi%
+%
+  \node [placeres] (#1l) {#2};
+  \node [resi,below=0.15em of #1l] (#1i1) {};
+  \foreach \i in {2,...,#3}{
+    \pgfmathtruncatemacro{\h}{\i-1} 
+     \node [resi,below=of #1i\h] (#1i\i) {};
+  }
+  \coordinate (boxnode) at (#1l.north);
+  \foreach \i in {2,...,#3}{
+    \node (boxnode) [minimum width=1.5em,inner sep=0pt,outer sep=0pt,fit=(boxnode)(#1i\i)] {};
+  }\node [fit=(boxnode), inner sep=0.5em] (boxnodeouter) {};%
+   \begin{pgfonlayer}{background}
+   \draw [res,resstyle] (boxnodeouter.south west) rectangle node [fit=(boxnode), inner sep=5pt] (#1) {} (boxnodeouter.north east);
+   \end{pgfonlayer} 
+}

@@ -79,7 +79,7 @@
         
 \newcommand{\putansline}[2]{%
   \setcounter{forloopcounter}{1}\forloop{forloopcounter}{0}{\value{forloopcounter}< #1}{\par\vspace{\the\baselineskip}\dotfill}%
-  \hfill[#2]%
+  [#2]%
   \addtocounter{calctotalmarks}{#2}% ADD to total 
   \addtext{#2}% ADD to question marks for grading table
   }
