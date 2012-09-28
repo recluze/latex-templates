@@ -9,6 +9,9 @@
 
 \newminted[mintcpp2]{cpp}{xleftmargin=20pt,numbersep=10pt,fontsize=\scriptsize,linenos}%
 
+\newminted[mintcpp]{cpp}{xleftmargin=20pt,numbersep=10pt,fontsize=\tiny,linenos}%
+
+
 \newminted[mintasm]{nasm}{xleftmargin=20pt,numbersep=10pt,fontsize=\tiny,linenos}%
 
 \newminted[mintxml2]{xml}{xleftmargin=20pt,numbersep=10pt,fontsize=\scriptsize,linenos}%
@@ -17,7 +20,7 @@
 
 
 
-
+\newminted[minttext]{text}{xleftmargin=20pt,numbersep=10pt,fontsize=\tiny,linenos}%
 
 
 
@@ -26,7 +29,7 @@
 \newcommand{\drawressingle}[4]{%
   \ifx&#3&\tikzstyle{placeres}=[];%
   \else\tikzstyle{placeres}=[#3];\fi%
-  \ifx&#3&\tikzstyle{resstyle}=[];%
+  \ifx&#4&\tikzstyle{resstyle}=[];%
   \else\tikzstyle{resstyle}=[usedres];\fi%
 %
   \node [placeres] (#1l) {#2};

@@ -41,13 +41,26 @@
 }
 
 
+\tikzset{
+  pointer/.style={draw,rectangle, dropshadowfade, fill=blue!15,
+    minimum width=2em, minimum height=2em,}, 
+  varbox/.style={draw,rectangle, dropshadowfade, fill=green!15,
+    minimum width=2em, minimum height=2em,},
+  pointarrow/.style={*->, thick, >=stealth'},
+  descbox/.style={draw,rectangle,fill=gray!15,font=\scriptsize},
+  descarrow/.style={->, dotted, >=stealth'},
+  classbox/.style={draw,rectangle split, dropshadowfade, fill=red!5,font=\scriptsize},
+  inheritarrow/.style={->,solid}
+  }
+
 
 \tikzset{
   proc/.style={draw,circle,dropshadowfade,fill=white,fill=blue!15}, 
   res/.style={rectangle,inner sep=1em, fill=green!15,dropshadowfade,rounded corners=2pt}, 
   resi/.style={circle, inner sep=0.11em,circle,node distance=0.5em,fill=black},
-  use/.style={draw,->,>=stealth',blue!50!black,thick},
+  use/.style={draw,<-,>=stealth',blue!50!black,thick},
   needs/.style={draw,<-,>=stealth',red!50!black, thick},
+  mightneed/.style={draw,<-,>=stealth',red!50!black,dotted,thick},
   linelabel/.style={midway,fill=white,font=\tiny},
   usedres/.style={fill=red!15}
 }
