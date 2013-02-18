@@ -1,3 +1,29 @@
+\pgfdeclaredecoration{free hand}{start}
+{
+  \state{start}[width = +0pt,
+  next state=step,
+  persistent precomputation = \pgfdecoratepathhascornerstrue]{}
+  \state{step}[auto end on length    = 3pt,
+  auto corner on length = 3pt,               
+  width=+2pt]
+  {
+    \pgfpathlineto{
+      \pgfpointadd
+      {\pgfpoint{2pt}{0pt}}
+      {\pgfpoint{rand*0.25pt}{rand*0.25pt}}
+%            {\pgfpoint{rand*0.15pt}{rand*0.15pt}}
+    }
+  }
+  \state{final}
+  {}
+}
+\tikzset{free hand/.style={
+    decorate,
+    decoration={free hand}
+  }
+} 
+\def\freedraw#1;{\draw[free hand] #1;} 
+
 \tikzset{
   %Define standard arrow tip
   >=stealth',
@@ -53,6 +79,19 @@
   inheritarrow/.style={->,solid}
   }
 
+\newcommand{\nptwo}{\nodepart{two}}  
+  
+\tikzset{
+  listnode/.style={draw, rectangle split, rectangle split parts=2, rectangle split horizontal, dropshadowfade, fill=blue!5, font=\tt},  
+  listconn/.style={->,>=stealth'},
+  dblistnode/.style={listnode, rectangle split parts=3},  
+  nullnode/.style={draw, circle solidus}
+}
+%\newcommand{chainlabel}[2]{\path [<-, draw, shorten >=10pt] #1 |- node [at end] {#2} ++(-1,1);}
+
+\tikzset{
+  stack/.style={rectangle split, rectangle split parts=#1,draw, anchor=center}
+}
 
 \tikzset{
   proc/.style={draw,circle,dropshadowfade,fill=white,fill=blue!15}, 
